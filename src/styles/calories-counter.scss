@@ -1,0 +1,99 @@
+@mixin svg-animation() {
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.calories-navigation {
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  svg:first-child {
+    margin-right: 1.5rem;
+  }
+  svg:last-child {
+    margin-left: 1.5rem;
+  }
+  svg:hover {
+    @include svg-animation();
+  }
+}
+
+.calories-counter-content {
+  display: flex;
+  justify-content: space-between;
+  .content-item {
+    flex-basis: 50%;
+    text-align: center;
+    height: 70vh;
+  }
+  .content-item:first-child {
+    border-right: 1px solid black;
+  }
+}
+
+.single-meal-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  font-size: 24px;
+  svg {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-left: 1rem;
+    &:hover {
+      transform: scale(110%);
+      @include svg-animation();
+    }
+  }
+  .meal-name-dropdown {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.svg-active {
+  transform: rotate(180deg);
+}
+
+.modal-backdrop {
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(151, 151, 151, 0.801);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .add-meal-wrapper {
+    z-index: 101;
+    width: 70%;
+    height: 50vh;
+    background-color: rgb(122, 122, 122);
+    border-radius: 24px;
+  }
+}
+
+.add-meal-modal-nav {
+  display: grid;
+  grid-template-columns: 95% 5%;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  color: white;
+  justify-content: space-between;
+  h3 {
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  svg {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    &:hover {
+      cursor: pointer;
+      transform: scale(110%);
+      transition: 0.25s;
+    }
+  }
+}
